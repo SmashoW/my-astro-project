@@ -1,0 +1,68 @@
+---
+/**
+ * ### 🌟 SvgAvatar
+ * Компонент SVG-аватара, отображающий заглавные буквы пользователя на цветном фоне.
+ *
+ * *Пример использования:*
+ * ```astro
+ * <SvgAvatar text="Иван" size="40px" />
+ * ```
+ */
+export interface Props {
+    /** Цвет фона аватара (например, '#54a3e8' или 'red') */
+    bgColor?: string;
+    /** Цвет текста аватара (например, '#ffffff' или 'black') */
+    textColor?: string;
+    /** Текст для отображения (имя или никнейм) */
+    text: string;
+    /** Размер SVG (например, '100%', '50px') */
+    size?: string;
+    /** viewBox SVG (по умолчанию '0 0 50 50') */
+    viewBox?: string;
+    /** Количество отображаемых букв */
+    letters?: number;
+    /** Размер шрифта (по умолчанию '100%') */
+    fontSize?: string;
+}
+
+const {
+    text = "?",
+    bgColor = "#54a3e8",
+    textColor = "#ffffff",
+    size = "100%",
+    viewBox = "0 0 50 50",
+    letters = 1,
+    fontSize = "100%",
+} = Astro.props;
+
+const initials = text.slice(0, letters).toUpperCase();
+---
+
+<svg
+    class:list={["avatar-svg"]}
+    width={size}
+    height={size}
+    viewBox={viewBox}
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <rect width="100%" height="100%" rx="50%" fill={bgColor}></rect>
+    <text
+        x="50%"
+        y="50%"
+        fill={textColor}
+        font-size={fontSize}
+        font-weight="600"
+        font-family="system-ui, -apple-system, sans-serif"
+        dominant-baseline="middle"
+        text-anchor="middle"
+    >
+        {initials}
+    </text>
+</svg>
+
+<style>
+    .avatar-svg {
+        width: auto;
+        flex-shrink: 0;
+    }
+</style>

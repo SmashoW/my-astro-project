@@ -1,0 +1,66 @@
+---
+import { CheckCheck } from "@lucide/astro";
+import { Check } from "@lucide/astro";
+
+interface Props {
+    type: "me" | "friend";
+    status: "read" | "unread";
+    time: string;
+}
+
+const date = new Date();
+const hours = date.getHours();
+const minutes = date.getMinutes();
+const timeLocal = `${hours}:${minutes}`;
+
+const type = Astro.props.type;
+const time = Astro.props.time;
+const status = Astro.props.status;
+---
+
+<tg-message type={type}>
+    <slot />
+    {
+        status === "read" ? (
+            <CheckCheck class="status" />
+        ) : (
+            <Check class="status" />
+        )
+    }
+    <span class="time">{timeLocal}</span>
+</tg-message>
+
+<style>
+    tg-message {
+        color: white;
+        border-radius: 8px;
+        max-width: 50%;
+        padding: 5px 80px 5px 10px;
+        position: relative;
+        align-self: flex-start;
+        word-break: break-word;
+
+        & .status {
+            position: absolute;
+            bottom: 0;
+            right: 10px;
+        }
+
+        & .time {
+            position: absolute;
+            bottom: 3px;
+            right: 40px;
+            font-size: 12px;
+        }
+    }
+
+    tg-message[type="me"] {
+        background-color: #8774e1;
+        margin-left: auto;
+    }
+    tg-message[type="friend"] {
+        background-color: #212121;
+    }
+</style>
+
+<script></script>

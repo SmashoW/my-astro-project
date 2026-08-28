@@ -1,0 +1,110 @@
+---
+import SvgAvatar from "./SvgAvatar.astro";
+import { VolumeOff } from '@lucide/astro';
+
+
+interface Props {
+  name: string;
+  message: string;
+  time: string;
+}
+
+const time = Astro.props.time;
+const {
+  name = '?',
+  message = '',
+  
+} = Astro.props;
+
+---
+
+<tg-chat-item>
+    <SvgAvatar text="ABC"/>
+    <div class="content-wrapper">
+        <div class="top-wrapper">
+            <span class="name">{name}</span>
+            <VolumeOff width={15} height={15} />
+        </div>
+        <div class="bot-wrapper">
+            <span class="dialog-message">{message}</span>
+        </div>
+    </div>
+    <span class="time">{time}</span>
+</tg-chat-item>
+
+    <!-- <div class="data-dialog">
+        <span class="name">{name}</span>
+        <span class="dialog-message">{message}</span>
+    </div>
+    <VolumeOff width={15} height={15} /> -->
+<!-- </tg-chat-item> -->
+
+<style>
+    tg-chat-item {
+        display: flex;
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        max-height: 72px;
+        padding: 8px;
+        align-items: center;
+        background-color: white;
+        
+        .time {
+            position: absolute;
+            top: 5px;
+            right: 7px;
+            font-size: 13px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            max-width: 330px;
+            
+            .top-wrapper {
+                display: flex;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                .name {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+               
+                
+                .lucide-volume-off {
+                    margin-left: 5px;
+                    margin-top: 5px;
+                }
+            }
+
+            .dialog-message {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 330px;
+            }
+            
+        }
+        
+        /*.data-dialog {
+            display: flex;
+            flex-direction: column;
+            max-width: 50%;
+                       
+            .dialog-message{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100%;
+            }
+        }*/
+    }
+
+</style>
+
+
