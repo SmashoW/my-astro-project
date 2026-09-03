@@ -4,15 +4,45 @@ import Message from "../components/Message.astro";
 import Layout from "../layouts/Layout.astro";
 import SvgAvatar from "../components/SvgAvatar.astro";
 import ChatItem from "../components/ChatItem.astro";
+
+import { Menu } from "@lucide/astro";
+import { Search } from "@lucide/astro";
+import Searcher from "../components/Searcher.astro";
+import BurgerMenu from "../components/BurgerMenu.astro";
+import SidePanel from "../layouts/SidePanel.astro";
 ---
 
 <Layout>
     <main class="main">
-        <div class="side-panel">
+        <SidePanel>
             <div class="sidepanel-header">
-                
+                <BurgerMenu />
+                <Searcher />
             </div>
-            <ChatItem name="Dmitriy" message="сообщение" time="1212"/>
+            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
+            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
+            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
+            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
+            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
+            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
+            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
+            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
+            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
+            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
+            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
+            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
+        </SidePanel>
+
+        <div class="message-container">
+            <Message type="me" time="11:45" status="read"
+                >121231232131233</Message
+            >
+            <Message type="friend" time="11:45" status="unread"
+                >121231232131233</Message
+            >
+            <Message type="friend" time="11:45" status="read"
+                >121231232131233</Message
+            >
         </div>
     </main>
 </Layout>
@@ -25,30 +55,39 @@ import ChatItem from "../components/ChatItem.astro";
         background-attachment: fixed;
         background-size: cover;
         width: 100%;
-        min-height: 100vh;
+        height: 100vh;
     }
 
     .title {
         color: #ff00ff;
         margin: 0;
     }
-    
-    .side-panel {
-        border-right: 1px solid rgba(0, 0, 0, 0.1);
-        width: 500px;
-        background-color: aqua;
-        padding: 32px;
-        margin: 10px 0px 10px 10px;
+
+    .sidepanel-header {
+        display: flex;
+        align-items: center;
+        padding: 0 8px;
+        min-height: 56px;
+        background-color: #212121;
         box-sizing: border-box;
-        border-radius: 16px;
+    }
+
+    .message-container {
         display: flex;
         flex-direction: column;
-        gap: 16px;
-
-        .sidepanel-header {
-            height: 56px;
-            width: 100%;
-            background-color: black;
-        }
+        width: 100%;
+        height: 100%;
+        gap: var(--spacing-4);
+        padding: 0 var(--spacing-64);
     }
 </style>
+
+<script>
+    // const span = document.querySelector('.input-search-placeholder');
+    // const input = document.querySelector<HTMLInputElement>('.input-field');
+
+    // if (input && span) {
+    //     input.placeholder = span.textContent;
+
+    // }
+</script>
