@@ -1,0 +1,48 @@
+---
+import "../styles/global.css";
+
+import Message from "../components/Message.astro";
+import Layout from "../layouts/Layout.astro";
+import SvgAvatar from "../components/SvgAvatar.astro";
+import ChatItem from "../components/ChatItem.astro";
+import MessageInput from "../components/MessageInput.astro";
+---
+
+<div class="chat-layout">
+  <div class="wrapper-chat">
+    <div class="wrapper-contact">contact</div>
+    <div class="message-container">
+      <Message type="me" time="11:45" status="read">121231232131233</Message>
+      <Message type="friend" time="11:45" status="unread"
+        >121231232131233</Message
+      >
+      <Message type="friend" time="11:45" status="read">121231232131233</Message
+      >
+    </div>
+    <div class="wrapper-message-input">
+      <MessageInput />
+    </div>
+  </div>
+</div>
+
+<style>
+  .chat-layout {
+    height: 100%;
+    w .wrapper-chat {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin: var(--spacing-3) auto;
+
+      .message-container {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        gap: var(--spacing-4);
+        overflow-y: auto;
+      }
+    }
+  }
+</style>

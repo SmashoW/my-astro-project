@@ -4,12 +4,15 @@ import Message from "../components/Message.astro";
 import Layout from "../layouts/Layout.astro";
 import SvgAvatar from "../components/SvgAvatar.astro";
 import ChatItem from "../components/ChatItem.astro";
-
-import { Menu } from "@lucide/astro";
-import { Search } from "@lucide/astro";
+import MessageInput from "../components/MessageInput.astro";
 import Searcher from "../components/Searcher.astro";
 import BurgerMenu from "../components/BurgerMenu.astro";
 import SidePanel from "../layouts/SidePanel.astro";
+
+
+import { Paperclip } from '@lucide/astro';
+import { Smile } from '@lucide/astro';
+import { Mic } from '@lucide/astro'; 
 ---
 
 <Layout>
@@ -20,29 +23,33 @@ import SidePanel from "../layouts/SidePanel.astro";
                 <Searcher />
             </div>
             <ChatItem name="Dmitriy" message="сообщение" time="1212" />
-            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
-            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
-            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
-            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
-            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
-            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
-            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
-            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
-            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
-            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
-            <ChatItem name="Dmitriy" message="сообщение" time="1212" />
+
         </SidePanel>
 
-        <div class="message-container">
-            <Message type="me" time="11:45" status="read"
-                >121231232131233</Message
-            >
-            <Message type="friend" time="11:45" status="unread"
-                >121231232131233</Message
-            >
-            <Message type="friend" time="11:45" status="read"
-                >121231232131233</Message
-            >
+        <div class="wrapper-chat">
+          <div class="wrapper-contact">
+            contact
+          </div>
+          <div class="message-container">
+              
+              <Message type="me" time="11:45" status="read"
+                  >121231232131233</Message
+              >
+              <Message type="friend" time="11:45" status="unread"
+                  >121231232131233</Message
+              >
+              <Message type="friend" time="11:45" status="read"
+                  >121231232131233</Message
+              >
+          </div>
+          <div class="wrapper-message-input">
+                <div class="attachment-menu">
+                    <Paperclip />
+                </div>
+                <MessageInput></MessageInput>
+                <button class="btn-icon"><Smile/></button>
+                <button class="btn-send"><Mic/></button>
+          </div>
         </div>
     </main>
 </Layout>
@@ -56,38 +63,104 @@ import SidePanel from "../layouts/SidePanel.astro";
         background-size: cover;
         width: 100%;
         height: 100vh;
+
+        .wrapper-chat {
+          display: flex;
+          flex-direction: column;
+          width: 35%;
+          margin: var(--spacing-3) auto;
+
+          .wrapper-message-input {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            height: 48px;
+            width: 100%;
+            background-color: #212121;
+            border-radius: 30px;
+
+            .attachment-menu {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: background-color 0.2s ease;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.05);
+                }
+
+                .lucide-paperclip {
+                    color: #fff;
+                }
+            }
+            
+            .btn-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: none;
+                background-color: #212121;
+                cursor: pointer;
+                transition: background-color 0.2s ease;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.05);
+                }
+                .lucide-smile {
+                    color: #fff;
+                }
+            }
+
+            .btn-send {
+                width: 48px;
+                height: 40px;
+                border-radius: 45%;
+                border: none;
+                background-color: #8774e1;
+                cursor: pointer;
+                transition: background-color 0.2s ease;
+
+                &:hover {
+                    background-color: hsl(250.45871559633028, 64.49704142011832%, 62.86274509803921%)
+                }
+
+                .lucide-mic {
+                    color: #fff;
+                }
+            }
+
+          }
+
+          .message-container {
+              display: flex;
+              position: relative;
+              flex-direction: column;
+              width: 100%;
+              height: 100%;
+              gap: var(--spacing-4);
+              overflow-y: auto;
+          }
+        }
+
+        .title {
+            color: #ff00ff;
+            margin: 0;
+        }
+
+        .sidepanel-header {
+            display: flex;
+            align-items: center;
+            padding: 0 8px;
+            min-height: 56px;
+            background-color: #212121;
+            box-sizing: border-box;
+        }
+
     }
 
-    .title {
-        color: #ff00ff;
-        margin: 0;
-    }
-
-    .sidepanel-header {
-        display: flex;
-        align-items: center;
-        padding: 0 8px;
-        min-height: 56px;
-        background-color: #212121;
-        box-sizing: border-box;
-    }
-
-    .message-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-        gap: var(--spacing-4);
-        padding: 0 var(--spacing-64);
-    }
 </style>
-
-<script>
-    // const span = document.querySelector('.input-search-placeholder');
-    // const input = document.querySelector<HTMLInputElement>('.input-field');
-
-    // if (input && span) {
-    //     input.placeholder = span.textContent;
-
-    // }
-</script>

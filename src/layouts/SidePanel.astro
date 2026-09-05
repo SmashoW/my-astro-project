@@ -1,0 +1,22 @@
+---
+import "../styles/global.css";
+---
+
+<div class="side-panel">
+    <slot />
+</div>
+
+<style>
+    .side-panel {
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        width: 500px;
+        background-color: #212121;
+        padding: var(--spacing-3);
+        margin: var(--spacing-3);
+        box-sizing: border-box;
+        border-radius: 16px;
+        overflow-y: auto;
+    }
+</style>
