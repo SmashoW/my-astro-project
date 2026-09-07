@@ -1,0 +1,42 @@
+---
+title: Chat Item
+description: Documentation and live preview of the custom chat item component.
+---
+
+import ChatItem from "../../../../components/ChatItem.astro";
+
+## Chat Item (`<tg-chat-item>`)
+
+A component used to display a single dialogue item in a chat list, complete with an avatar, user name, message preview, and timestamp.
+
+## Live Preview
+
+You can see the rendered component directly inside the Starlight documentation:
+
+## Live Preview
+
+You can see the rendered component directly inside the Starlight documentation:
+
+<div class="not-content">
+  <ChatItem
+    name="Константин"
+    message="Привет! Я написал этот UI Kit и он наконец-то работает"
+    time="12:45"
+  />
+</div>
+
+## Usage
+
+Copy the following code into your Astro page or layout:
+
+```astro
+---
+import ChatItem from "../components/ChatItem.astro";
+---
+
+<ChatItem
+  name="John Doe"
+  message="Hello world!"
+  time="15:30"
+/>
+```
