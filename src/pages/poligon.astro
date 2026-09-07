@@ -1,52 +1,46 @@
 ---
 import "../styles/global.css";
-import SortVisualizer from "../components/SortVisualizer.astro";
-import DataStructureVisualizerAstroComponent from "../components/DataStructureVisualizer.astro";
 import Message from "../components/Message.astro";
 import SvgAvatar from "../components/SvgAvatar.astro";
 ---
 
 <html lang="ru">
-    <head>
-        <meta charset="utf-8" />
-        <title>Визуализатор сортировок</title>
-    </head>
-    <body>
-        <div class="test">
-            <Message type="friend" time="15:25" status="unread"
-                >Сообщение
-                другасообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjk</Message
-            >
-            <Message type="me" time="15:25" status="unread"
-                >Мое сообщение
-            </Message>
-            <Message type="me" time="15:25" status="unread"
-                >Мое
-                сообщениеfсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjk
-            </Message>
-            <Message type="me" time="15:25" status="unread"
-                >Мое сообщение
-            </Message>
-        </div>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Визуализатор сортировок</title>
+  </head>
+  <body>
+    <div class="test">
+      <Message type="friend" time="15:25" status="unread"
+        >Сообщение
+        другасообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjk</Message
+      >
+      <Message type="me" time="15:25" status="unread">Мое сообщение </Message>
+      <Message type="me" time="15:25" status="unread"
+        >Мое
+        сообщениеfсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkсообщениеfdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjkdgdfgdfgdfgdfggdhfjkghdfjkghdfkjghdfjkghdjfkghdfkjghdfkjghdfjkghdfgjdfhgkjdfhgjdkfghdkjfghjk
+      </Message>
+      <Message type="me" time="15:25" status="unread">Мое сообщение </Message>
+    </div>
+  </body>
 </html>
 
 <style>
-    body {
-        height: 100vh;
+  body {
+    height: 100vh;
 
-        & main {
-            height: 100%;
-        }
+    & main {
+      height: 100%;
     }
+  }
 
-    .test {
-        width: 600px;
-        height: 500px;
-        background-color: burlywood;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        overflow-y: scroll;
-    }
+  .test {
+    width: 600px;
+    height: 500px;
+    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: scroll;
+  }
 </style>
