@@ -1,33 +1,103 @@
-
-
+---
+import Mic from "@lucide/astro/icons/mic";
+import Smile from "@lucide/astro/icons/smile";
+import Paperclip from "@lucide/astro/icons/paperclip";
+---
 
 <tg-message-input>
-  <input
-    type="text"
-    autocomplete="off"
-    placeholder="Message"
-    />
-
+  <div class="attachment-menu">
+    <Paperclip />
+  </div>
+  <input type="text" autocomplete="off" placeholder="Message" />
+  <button class="btn-icon"><Smile /></button>
+  <button class="btn-send"><Mic /></button>
 </tg-message-input>
-
-
 
 <style>
   tg-message-input {
-    box-sizing: border-box;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     bottom: 30px;
-    width: 500px;
-    
+    width: 100%;
+
+    align-items: center;
+    padding: var(--spacing-1);
+    gap: var(--spacing-1);
+    height: 48px;
+    width: 100%;
+    background-color: #212121;
+    border-radius: 30px;
+
     & input {
+      width: 100%;
       color: #fff;
       caret-color: #8774e1;
-      padding: 8px 0;
-      font-size: 18px;
+      padding: var(--spacing-2);
+      font-size: 1rem;
       width: 100%;
-      background-color: #212121;
+      border-radius: 24px;
+      background-color: #353535;
       border: none;
       outline: none;
+    }
+
+    .attachment-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      height: 100%;
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+      color: white;
+    }
+
+    .btn-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      height: 100%;
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+      border: none;
+      background-color: #212121;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+      .lucide-smile {
+        color: #fff;
+      }
+    }
+
+    .btn-send {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      height: 100%;
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+      border: none;
+      background-color: #8774e1;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: hsl(
+          250.45871559633028,
+          64.49704142011832%,
+          62.86274509803921%
+        );
+      }
+
+      .lucide-mic {
+        color: #fff;
+      }
+    }
   }
-}
 </style>

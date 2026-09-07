@@ -3,65 +3,65 @@ import { Search } from "@lucide/astro";
 ---
 
 <tg-searcher>
-    <input
-        class="input-field"
-        type="text"
-        autocomplete="off"
-        placeholder="Search"
-    />
-    <span class="search-header"><Search /></span>
+  <input
+    class="input-field"
+    type="text"
+    autocomplete="off"
+    placeholder="Search"
+  />
+  <span class="search-header"><Search /></span>
 </tg-searcher>
 
 <style>
-    tg-searcher {
-        position: relative;
-        display: flex;
-        flex-grow: 1;
+  tg-searcher {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
 
-        width: 100%;
-        height: 100%;
+    width: 100%;
+    height: 100%;
 
-        .input-field {
-            color: #fff;
-            caret-color: #8774e1;
-            padding: 0 50px;
-            margin: 0 8px;
-            width: 100%;
-            height: 100%;
-            border: 1px solid transparent;
-            border-radius: 20px;
-            background-color: #181818;
-            transition: border-color 0.2s;
+    .input-field {
+      color: #fff;
+      caret-color: #8774e1;
+      padding: 0 50px;
+      margin: 0 8px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid transparent;
+      border-radius: 20px;
+      background-color: #181818;
+      transition: border-color 0.2s;
 
-            &:hover {
-                border: 1px solid #9e9e9e;
-                outline: none;
-            }
+      &:hover {
+        border: 1px solid #9e9e9e;
+        outline: none;
+      }
 
-            &:focus {
-                border: 2px solid #8774e1;
-                outline: none;
-            }
-        }
-
-        .search-header {
-            position: absolute;
-            left: 20px;
-            top: 16px;
-
-            color: #9e9e9e;
-
-            svg {
-                stroke: currentColor;
-            }
-        }
-
-        &:focus-within .search-header {
-            color: #8774e1;
-        }
-
-        .input-search-placeholder {
-            color: #9e9e9e;
-        }
+      &:focus {
+        border: 2px solid #8774e1;
+        outline: none;
+      }
     }
+
+    .search-header {
+      position: absolute;
+      left: 20px;
+      top: 16px;
+
+      color: #9e9e9e;
+
+      svg {
+        stroke: currentColor;
+      }
+    }
+
+    &:focus-within .search-header {
+      color: #8774e1;
+    }
+
+    .input-search-placeholder {
+      color: #9e9e9e;
+    }
+  }
 </style>

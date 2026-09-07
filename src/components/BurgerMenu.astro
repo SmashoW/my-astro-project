@@ -3,33 +3,36 @@ import { Menu } from "@lucide/astro";
 ---
 
 <tg-burger-menu>
-    <button class="btn-menu">
-        <Menu />
-    </button>
+  <button class="btn-menu" type="button" aria-label="Меню">
+    <Menu />
+  </button>
 </tg-burger-menu>
 
 <style>
-    tg-burger-menu {
-        width: 40px;
-        height: 40px;
+  tg-burger-menu {
+    display: flex;
+    width: 40px;
+    height: 40px;
 
-        .btn-menu {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            height: 100%;
-            width: 100%;
-            color: white;
-            border-radius: 50%;
-            border: none;
-            background-color: var(--color-slate-900);
-            padding: var(--spacing-2);
-            transition: background-color 0.2s ease;
-        }
+    .btn-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
+      color: white;
+      border-radius: 50%;
+      border: none;
 
-        .btn-menu:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
+      background-color: var(--color-slate-900);
+      padding: var(--spacing-2);
+
+      transition: background-color 0.2s ease;
     }
+
+    .btn-menu:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
 </style>

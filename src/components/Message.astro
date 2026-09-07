@@ -3,9 +3,9 @@ import { CheckCheck } from "@lucide/astro";
 import { Check } from "@lucide/astro";
 
 interface Props {
-    type: "me" | "friend";
-    status: "read" | "unread";
-    time: string;
+  type: "me" | "friend";
+  status: "read" | "unread";
+  time: string;
 }
 
 const date = new Date();
@@ -19,48 +19,42 @@ const status = Astro.props.status;
 ---
 
 <tg-message type={type}>
-    <slot />
-    {
-        status === "read" ? (
-            <CheckCheck class="status" />
-        ) : (
-            <Check class="status" />
-        )
-    }
-    <span class="time">{time}</span>
+  <slot />
+  {status === "read" ? <CheckCheck class="status" /> : <Check class="status" />}
+  <span class="time">{time}</span>
 </tg-message>
 
 <style>
-    tg-message {
-        color: white;
-        border-radius: 15px;
-        max-width: 50%;
-        padding: 5px 80px 5px 10px;
-        position: relative;
-        align-self: flex-start;
-        word-break: break-word;
+  tg-message {
+    color: white;
+    border-radius: 15px;
+    max-width: 50%;
+    padding: 5px 80px 5px 10px;
+    position: relative;
+    align-self: flex-start;
+    word-break: break-word;
 
-        & .status {
-            position: absolute;
-            bottom: 0;
-            right: 10px;
-        }
-
-        & .time {
-            position: absolute;
-            bottom: 3px;
-            right: 40px;
-            font-size: 12px;
-        }
+    & .status {
+      position: absolute;
+      bottom: 0;
+      right: 10px;
     }
 
-    tg-message[type="me"] {
-        background-color: #8774e1;
-        align-self: flex-end;
+    & .time {
+      position: absolute;
+      bottom: 3px;
+      right: 40px;
+      font-size: 12px;
     }
-    tg-message[type="friend"] {
-        background-color: #212121;
-    }
+  }
+
+  tg-message[type="me"] {
+    background-color: #8774e1;
+    align-self: flex-end;
+  }
+  tg-message[type="friend"] {
+    background-color: #212121;
+  }
 </style>
 
 <script></script>
